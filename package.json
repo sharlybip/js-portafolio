@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production --config webpack.config.js",
+    "build": "node .scripts/create.env.js && webpack --mode production --config webpack.config.js",
     "dev": "webpack --config webpack.config.dev.js",
-    "build:watch": "webpack --mode production --watch --config webpack.config.js"
+    "build:watch": "webpack --mode production --watch --config webpack.config.js",
+    "deploy": "gh-pages -d dist"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,8 @@
     "terser-webpack-plugin": "^5.3.7",
     "url-loader": "^4.1.1",
     "webpack": "^5.76.2",
-    "webpack-cli": "^5.0.1"
+    "webpack-cli": "^5.0.1",
+
+    "gh-pages": "^4.0.0"
   }
 }
